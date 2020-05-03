@@ -15,3 +15,11 @@ The number of selections they can make is limited by a reading target they set, 
 Their selected stories are then saved for them to read later and the list is reset each morning.
 
 <img src="./images/news-picks-browse.png" height="500">
+
+## Online Demo
+
+Imagined for mobile but only tested on desktop browser (chrome/firefox) — [desktop browser demo](https://karlsimsbbc.github.io/my-news-prototype/index.html). All data is static, downloaded from BBC RSS feeds.
+
+## Running locally
+
+User local host server to serve static files: e.g. `python -m http.server 8000`
