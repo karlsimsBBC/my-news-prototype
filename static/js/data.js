@@ -3,7 +3,8 @@ class ArticleManager {
   constructor(src) {
     this.src = src;
     this.data = [];
-    this.selected = new Set(["world-us-canada-52499900", "business-52504187"]);
+    this.selected = new Set(JSON.parse(localStorage.getItem('selected-stories')) || ["business-52504187"]);
+
     this.id2index = {};
     this.cursorIndex = 0;
     this.size = -1;
@@ -44,6 +45,8 @@ class ArticleManager {
 
   removeSelected(id) {
     this.selected.delete(id)
+    let now = JSON.stringify(Array.from(this.selected));
+    localStorage.setItem('selected-stories', now)
   }
 
   getSelectedCount() {
@@ -52,6 +55,8 @@ class ArticleManager {
 
   addSelected(id) {
     this.selected.add(id)
+    let now = JSON.stringify(Array.from(this.selected));
+    localStorage.setItem('selected-stories', now)
   }
 
   getArticleFromId(id) {

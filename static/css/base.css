@@ -232,6 +232,7 @@ main {
 
 .my-picks {
   max-width: 100%;
+  width: 100%;
   display: none;
 }
 
@@ -278,15 +279,15 @@ main {
 }
 
 .delbtn {
-  float: right;
   font-size: 14px;
-  color: gray;
+  color: grey;
   z-index: 100;
   position: absolute;
-  right: 8px;
   padding: 16px 12px;
-  margin-top: -42px;
-  cursor: pointer
+  text-align: right;
+  margin: -42px -16px;
+  cursor: pointer;
+  width: 100%;
 }
 
 .delbtn:hover {

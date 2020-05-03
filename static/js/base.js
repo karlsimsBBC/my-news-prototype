@@ -84,7 +84,6 @@ function handleEnd(event) {
   setTimeout(() => {
     curr.style.transition = '0s';
   }, 0.5)
-  console.log(deltaX)
   if (Math.abs(deltaX) > swipeThreshold) {
     sumbit(deltaX > 0)
   }
@@ -168,13 +167,14 @@ function createElement(type, className, textContent) {
 
 function createList(selected) {
   pickList.innerHTML = ''
+  console.log(selected)
   for (let item of selected) {
     let liItem = createElement('li', 'my-picks-list-item')
     let a = createElement('a', 'list-item-link')
     a.href = item.link;
 
-    let img = createElement('img', 'list-item-img')
-    img.src = item.img;
+    let img = createElement('div', 'list-item-img')
+    img.style.backgroundImage = `url("${item.img}")`
     a.appendChild(img)
 
     let info = createElement('div', 'list-item-info')
