@@ -186,6 +186,7 @@ function createList(selected) {
 
 
     a.appendChild(info)
+    a.target = "_blank";
     liItem.appendChild(a)
 
     let deleteBtn = createElement('span', 'material-icons delbtn', 'close');
