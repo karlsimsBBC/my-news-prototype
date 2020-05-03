@@ -3,8 +3,14 @@ class ArticleManager {
   constructor(src) {
     this.src = src;
     this.data = [];
-    this.selected = new Set(JSON.parse(localStorage.getItem('selected-stories')) || ["business-52504187"]);
 
+    let stored = JSON.parse(localStorage.getItem('selected-stories'))
+
+    if (stored !== undefined && stored.length > 0) {
+      this.selected = new Set(stored)
+    } else {
+      this.selected = new Set(["business-52504187"])
+    }
     this.id2index = {};
     this.cursorIndex = 0;
     this.size = -1;

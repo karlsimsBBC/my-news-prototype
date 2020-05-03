@@ -181,6 +181,7 @@ function createList(selected) {
     info.appendChild(createElement('h3', 'list-item-title', item.title))
 
     let p = createElement('div', 'list-item-text');
+
     p.appendChild(createElement('span', 'list-item-text-topic', item.topic.replace(/-/g, ' ')))
     info.appendChild(p)
 
@@ -189,13 +190,15 @@ function createList(selected) {
     a.target = "_blank";
     liItem.appendChild(a)
 
+    let contain = createElement('div', 'del-btn-wrapper')
     let deleteBtn = createElement('span', 'material-icons delbtn', 'close');
     deleteBtn.onclick = () => {
       articleManager.removeSelected(item.id)
       createList(articleManager.getSelected())
       counter.textContent = `${articleManager.getSelectedCount()} / ${maxCount}`
     }
-    liItem.appendChild(deleteBtn)
+    contain.appendChild(deleteBtn)
+    liItem.appendChild(contain)
     pickList.appendChild(liItem);
   }
 }

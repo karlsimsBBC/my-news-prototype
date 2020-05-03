@@ -278,16 +278,19 @@ main {
   text-transform: uppercase;
 }
 
-.delbtn {
-  font-size: 14px;
-  color: grey;
+.del-btn-wrapper {
   z-index: 100;
   position: absolute;
-  padding: 16px 12px;
   text-align: right;
   margin: -42px -16px;
   cursor: pointer;
   width: 100%;
+}
+
+.delbtn {
+  font-size: 14px;
+  color: grey;
+  padding: 16px 12px;
 }
 
 .delbtn:hover {
