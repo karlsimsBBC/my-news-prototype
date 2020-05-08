@@ -1,5 +1,4 @@
 # My News Picks
-
 A novel way for self-curating the news and creating daily personalised reading lists.
 
 ## Demo
@@ -22,5 +21,4 @@ App is novel way for self-curating the news and creating daily personalised read
 <img src="./images/news-picks-browse.png">
 
 ## Running locally
-
 User local host server to serve static files: e.g. `python -m http.server 8000`

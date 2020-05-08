@@ -248,7 +248,7 @@ main {
 
 .list-item-img {
   flex: 1;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-color: #ccc;
   display: block;
