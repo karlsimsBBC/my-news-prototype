@@ -4,16 +4,19 @@ class ArticleManager {
     this.src = src;
     this.data = [];
 
-    let stored = JSON.parse(localStorage.getItem('selected-stories'))
 
-    if (stored !== undefined && stored.length > 0) {
-      this.selected = new Set(stored)
-    } else {
-      this.selected = new Set(["business-52504187"])
-    }
+    this.selected = this.getStored()
     this.id2index = {};
     this.cursorIndex = 0;
     this.size = -1;
+  }
+
+  getStored() {
+    let stored = localStorage.getItem('selected-stories');
+    if (stored !== null) {
+      return new Set(["business-52504187"]);
+    }
+    return new Set(JSON.parse(stored));
   }
 
   load(callOnDone) {
